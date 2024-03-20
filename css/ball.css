@@ -1,0 +1,22 @@
+body {
+    height: 100vh;
+
+    margin: 0;
+}
+
+#ball {
+    position: absolute;
+
+    width: 5rem;
+    height: 5rem;
+
+    background-color: blue;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    transition-property: top, left;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
