@@ -3,30 +3,78 @@
     --light-on: #fce960;
 }
 
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: ". light switch";
+    justify-items: center;
+    align-items: center;
+
+    background-color: black;
+
+    overflow: hidden;
+
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+body.on {
+    background-color: #89cff0;
+}
+
 #light {
+    grid-area: light;
+
     width: 20rem;
     height: 20rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 10rem;
+    font-family: 'Comic Sans MS', sans-serif;
+    color: #f0b241;
 
     background-color: var(--light-off);
     box-shadow: 0 0 3rem var(--light-off);
 
     border-radius: 50%;
+
+    transform: translateY(100%);
+
+    transition-property: background-color, box-shadow, transform;
+    transition-duration: 0.3s;
+
+    user-select: none;
 }
 
 #light.on {
     background-color: var(--light-on);
     box-shadow: 0 0 3rem var(--light-on);
+
+    transform: translateY(0);
 }
 
 #light-switch {
+    grid-area: switch;
+
     width: 5rem;
     height: 2.5rem;
 
-    background-color: gray;
+    background-color: white;
+    box-shadow: 0 0 1.5rem white;
 
     border-radius: 1.25rem 0 0 1.25rem;
 
     transform: rotate(20deg);
+    transform-origin: 1.25rem 1.25rem;
+
+    transition-property: transform;
+    transition-duration: 0.3s;
 }
 
 #light-switch.on {
