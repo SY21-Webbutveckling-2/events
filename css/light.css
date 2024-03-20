@@ -1,0 +1,34 @@
+:root {
+    --light-off: #f1ecc0;
+    --light-on: #fce960;
+}
+
+#light {
+    width: 20rem;
+    height: 20rem;
+
+    background-color: var(--light-off);
+    box-shadow: 0 0 3rem var(--light-off);
+
+    border-radius: 50%;
+}
+
+#light.on {
+    background-color: var(--light-on);
+    box-shadow: 0 0 3rem var(--light-on);
+}
+
+#light-switch {
+    width: 5rem;
+    height: 2.5rem;
+
+    background-color: gray;
+
+    border-radius: 1.25rem 0 0 1.25rem;
+
+    transform: rotate(20deg);
+}
+
+#light-switch.on {
+    transform: rotate(-20deg);
+}
